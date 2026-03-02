@@ -1,0 +1,20 @@
+:root{--glass:rgba(255,255,255,.42);--b:#ffffff8a;--txt:#1e2f45}
+*{box-sizing:border-box;font-family:Inter,system-ui,sans-serif}body{margin:0;color:var(--txt);background:#dff2ff;min-height:100vh}
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 20% 10%,#fff,transparent 40%),radial-gradient(circle at 80% 10%,#dbf8ff,transparent 35%),linear-gradient(135deg,#d9e9ff,#e7fff2);z-index:-1}
+.app{max-width:1300px;margin:1rem auto;padding:1rem;border:1px solid var(--b);backdrop-filter:blur(16px);border-radius:20px}
+.glass{background:var(--glass);box-shadow:0 8px 30px #6aa0c033}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap}.tabs button{padding:.6rem 1rem;border-radius:999px;border:1px solid #fff8;background:#fff7}.tabs .active{background:#b5f4ff}
+.tab{display:none}.tab.active{display:block}
+.panel{padding:1rem;border-radius:16px;border:1px solid #fff8;margin:.6rem 0}.param-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.full{grid-column:1/-1}
+form{display:grid;gap:.4rem}input,select,button{padding:.55rem;border-radius:10px;border:1px solid #ffffffad;background:#ffffffd9}button{cursor:pointer;background:#cbf0ff;font-weight:700}
+.table .row,.list-row{display:grid;grid-template-columns:50px 90px 1fr 100px 130px 100px;gap:.4rem;align-items:center;padding:.35rem 0;border-bottom:1px solid #ffffff88}
+.thumb{width:40px;height:40px;object-fit:cover;border-radius:8px;border:2px solid #8de28d;background:#eef8ff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem}.card{display:grid;grid-template-columns:1fr 90px;gap:.5rem}
+.needed-ok{background:#dfffee}.needed-bad{background:#ffe5c7}
+.teams-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}.team{border-radius:14px;padding:.6rem;min-height:260px}
+.members{display:grid;grid-template-columns:1fr;gap:.4rem}.slot{min-height:48px;display:flex;align-items:center;justify-content:center;border:1px dashed #ffffffad;border-radius:8px;background:#ffffff6e;padding:.25rem}
+.team-title{margin-top:.5rem;padding:.4rem;border-radius:8px;background:#ffffffb8;text-align:center;font-weight:700}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+.section-head{display:flex;justify-content:space-between;align-items:center}.empty{text-align:center;padding:2rem}
+@media (max-width:900px){.param-grid{grid-template-columns:1fr}.teams-grid{grid-template-columns:1fr 1fr}.table .row,.list-row{grid-template-columns:45px 70px 1fr 70px 90px 90px}}
+@media (max-width:560px){.teams-grid{grid-template-columns:1fr}.app{margin:.3rem;padding:.7rem}}
