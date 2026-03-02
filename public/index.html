@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GI Organizer Manus</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="app glass">
+    <header>
+      <h1>GI Organizer Manus</h1>
+      <p>Farm • Teams • Sorteio • Parametrização</p>
+    </header>
+    <nav class="tabs">
+      <button data-tab="farm" class="active">Farm</button>
+      <button data-tab="teams">Teams</button>
+      <button data-tab="sorteio">Sorteio</button>
+      <button data-tab="param">Parametrização</button>
+    </nav>
+
+    <section id="farm" class="tab active">
+      <div class="section-head"><h2>Farm Cards</h2><button id="addFarmCard">+</button></div>
+      <div id="farmCards" class="grid cards"></div>
+    </section>
+
+    <section id="teams" class="tab">
+      <h2>Teams</h2>
+      <div id="teamsGrid" class="teams-grid"></div>
+    </section>
+
+    <section id="sorteio" class="tab">
+      <h2>Sorteio</h2>
+      <div class="glass panel empty">Módulo reservado para evolução futura.</div>
+    </section>
+
+    <section id="param" class="tab">
+      <h2>Parametrização</h2>
+      <div class="param-grid">
+        <div class="glass panel">
+          <h3>Novo Personagem</h3>
+          <form id="charForm">
+            <input id="charImage" type="file" accept="image/*" />
+            <input id="charName" placeholder="Nome" required />
+            <select id="charElement"><option>Pyro</option><option>Hydro</option><option>Electro</option><option>Cryo</option><option>Anemo</option><option>Geo</option><option>Dendro</option></select>
+            <select id="charRole"><option>DPS</option><option>SUBDPS</option><option>Support</option><option>Sustainer</option></select>
+            <button>Salvar personagem</button>
+          </form>
+          <div id="charList"></div>
+        </div>
+
+        <div class="glass panel">
+          <h3>Cadastrar Item</h3>
+          <form id="matForm">
+            <input id="matImage" type="file" accept="image/*" />
+            <input id="matName" placeholder="Nome do item" required />
+            <select id="matType"><option>Boss</option><option>Enemy</option><option>EXP</option><option>Gem</option><option>Mora</option><option>Nature</option><option>talent</option><option>Weapon</option><option>Mineral</option></select>
+            <input id="matLevel" type="number" min="1" max="4" value="1" />
+            <button>Salvar item</button>
+          </form>
+          <h4>EXP & Mineral</h4>
+          <div class="exp-grid">
+            <label>Wanderer <input id="expWanderer" type="number" value="0"></label>
+            <label>Adventurer <input id="expAdventurer" type="number" value="0"></label>
+            <label>Hero <input id="expHero" type="number" value="0"></label>
+            <label>Ore <input id="expOre" type="number" value="0"></label>
+            <label>Fine <input id="expFine" type="number" value="0"></label>
+            <label>Mystic <input id="expMystic" type="number" value="0"></label>
+          </div>
+          <button id="recalcBtn">Recalcular EXP/MINERAL</button>
+          <h4>Material List</h4>
+          <div id="matList"></div>
+        </div>
+
+        <div class="glass panel full">
+          <div class="section-head"><h3>Cadastrar Farm Template</h3><button id="addTemplate">+</button></div>
+          <div id="templates"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="farmCardModal" class="glass panel">
+    <h3>Novo Farm Card</h3>
+    <label>Personagem<select id="fcCharacter"></select></label>
+    <label>Ciclo<input id="fcCycle" placeholder="Ex: Semana 1" /></label>
+    <label>Farm Template<select id="fcTemplate"></select></label>
+    <div class="row"><button id="fcCreate">Criar</button><button id="fcClose">Cancelar</button></div>
+  </dialog>
+
+  <script src="/script.js"></script>
+</body>
+</html>
