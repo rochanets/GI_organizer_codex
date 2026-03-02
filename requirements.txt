@@ -1,0 +1,3 @@
+# GI Organizer Manus
+# Sem dependências externas de terceiros no momento.
+# Mantido para padronizar testes e setup local.
